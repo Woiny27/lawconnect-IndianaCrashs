@@ -1,16 +1,16 @@
 [
     {
-        "field_detected": "mailing_address",
-        "endpoint": "/Search/Results.aspx",
+        "field_detected": "phone_number",
+        "endpoint": "/report/preview",
         "access_state": "pre-authentication",
-        "sample_value": "123 Hoosier Ln, Indianapolis, IN",
+        "sample_value": "317-555-0199",
         "severity": "high"
     },
     {
-        "field_detected": "insurance_related_identifiers",
-        "endpoint": "/aries/api/preview",
+        "field_detected": "insurance_policy_number",
+        "endpoint": "/aries/search/results",
         "access_state": "weakly_protected",
-        "sample_value": "POL-99283-IN",
+        "sample_value": "IN-PROV-99283X",
         "severity": "critical"
     }
 ]
