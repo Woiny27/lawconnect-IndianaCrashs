@@ -28,16 +28,7 @@ These tools help identify and report on security exposures, authentication risks
 - **Privacy Impact:** High. Exposure of contact data for 570 citizens daily leads to potential phishing and insurance fraud risks.
 - **Recommended Remediation:** Implement SHA-256 masking for all PII fields and migrate the ARIES Portal preview layer behind an OIDC-compliant identity provider.
 
-## Technical Architecture Decisions (Indiana-Only)
+## Technical Architecture Decisions 
 
 ### 1. Gated Access Strategy (Bridge Pattern)
-Since Indiana's row-level data is behind a commercial paywall, the prototype uses a **Bridge Pattern** to interface with the [LexisNexis Developer Portal](https://dev.lexisnexis.com/support) APIs. This avoids direct scraping while verifying PII masking at the source.
-
-### 2. "Safe-by-Default" Evidence Generation
-The engine identifies sensitive fields (name, phone, insurance IDs) and replaces them with **synthetic tokens** for the `assessment_report.json`. We use SHA-256 hashing to prove field accessibility without exposing actual citizen data.
-
-### 3. Asynchronous Multi-State Scalability
-Built using **Asynchronous I/O (asyncio)** to handle Indiana's **208,000 annual records**. The ingestion layer uses non-blocking requests to monitor the [ARIES Portal](https://www.ariesportal.com/) search endpoints in real-time.
-
-### 4. Automated Remediation Mapping
-Detected vulnerabilities are automatically flagged against the **Indiana Fair Information Practices Act (FIPA)** to provide a compliance roadmap for client-ready reporting.
+Since Indiana's row-level data is behind a commercial paywall, the proto
