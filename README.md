@@ -32,3 +32,8 @@ These tools help identify and report on security exposures, authentication risks
 - **Access Achievement:** Identified via unencrypted session headers and public preview workflows.
 - **Privacy Impact:** High. Exposure of contact data for 570 citizens daily leads to potential phishing and insurance fraud risks.
 - **Recommended Remediation:** Implement SHA-256 masking for all PII fields and migrate the ARIES Portal preview layer behind an OIDC-compliant identity provider.
+
+## Technical Architecture Decisions (Indiana-Only)
+
+### 1. Gated Access Strategy (Bridge Pattern)
+Since Indiana's row-level data is behind a commercial paywall, the proto
